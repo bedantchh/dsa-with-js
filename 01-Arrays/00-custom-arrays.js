@@ -12,8 +12,12 @@ class Myarray {
   }
 
   get(index) {
-    this.length = index;
-    console.log(this.data[this.length]);
+    return this.data[index];
+  }
+
+  pop() {
+    delete this.data[this.length - 1];
+    this.length--;
   }
 }
 
@@ -27,3 +31,6 @@ myNewArray.push("Banana");
 // console.log(myNewArray);
 
 myNewArray.get(0);
+
+myNewArray.pop();
+console.log(myNewArray);
