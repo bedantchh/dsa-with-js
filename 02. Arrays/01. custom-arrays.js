@@ -30,6 +30,17 @@ class Myarray {
     this.length--;
     return firstItem;
   }
+
+  deleteItem(index) {
+    const delIndex = this.data[index];
+    // console.log(delIndex);
+    for (let i = index; i < this.length - 1; i++) {
+      this.data[i] = this.data[i + 1];
+    }
+
+    delete this.data[this.length - 1];
+    this.length--;
+  }
 }
 
 const myNewArray = new Myarray();
@@ -46,6 +57,10 @@ myNewArray.push("Banana");
 // myNewArray.pop();
 // console.log(myNewArray);
 
+// console.log(myNewArray);
+// console.log(myNewArray.shift());
+// console.log(myNewArray);
+
 console.log(myNewArray);
-console.log(myNewArray.shift());
+myNewArray.deleteItem(1);
 console.log(myNewArray);
